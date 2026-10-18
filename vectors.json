@@ -1,0 +1,159 @@
+{
+  "normalize": [
+    {
+      "input": "https://example.com/post",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "http://example.com/post",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "https://www.Example.COM/post/",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "https://example.com/post#section-2",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "https://example.com:443/post",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "http://example.com:80/post",
+      "expected": "example.com/post"
+    },
+    {
+      "input": "https://example.com",
+      "expected": "example.com"
+    },
+    {
+      "input": "https://example.com/",
+      "expected": "example.com"
+    },
+    {
+      "input": "https://example.com///",
+      "expected": "example.com"
+    },
+    {
+      "input": "https://example.com/a/b/c.html?x=1&y=2",
+      "expected": "example.com/a/b/c.html?x=1&y=2"
+    },
+    {
+      "input": "https://example.com/a/b/?x=1",
+      "expected": "example.com/a/b?x=1"
+    },
+    {
+      "input": "https://example.com/Case/Sensitive",
+      "expected": "example.com/Case/Sensitive"
+    },
+    {
+      "input": "  https://example.com/padded  ",
+      "expected": "example.com/padded"
+    },
+    {
+      "input": "https://sub.example.co.uk/p?q=A#frag",
+      "expected": "sub.example.co.uk/p?q=A"
+    },
+    {
+      "input": "HTTPS://EXAMPLE.COM/Upper",
+      "expected": "example.com/Upper"
+    },
+    {
+      "input": "example.com/no-scheme/",
+      "expected": "example.com/no-scheme"
+    },
+    {
+      "input": "https://example.com?Q=1",
+      "expected": "example.com?Q=1"
+    },
+    {
+      "input": "https://Example.com/?Q=1#x",
+      "expected": "example.com?Q=1"
+    },
+    {
+      "input": "http://example.com:8080/path/",
+      "expected": "example.com:8080/path"
+    }
+  ],
+  "snapshot": [
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": {
+        "timestamp": "20190302123456",
+        "date": "2019-03-02"
+      }
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456id_/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": {
+        "timestamp": "20190302123456",
+        "date": "2019-03-02"
+      }
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456if_/http://www.example.com/post/",
+      "dead": "https://example.com/post",
+      "expected": {
+        "timestamp": "20190302123456",
+        "date": "2019-03-02"
+      }
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456/example.com/post",
+      "dead": "https://example.com/post",
+      "expected": {
+        "timestamp": "20190302123456",
+        "date": "2019-03-02"
+      }
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456/https://example.com/other",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org/web/2019030212345/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20191302123456/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456/",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org/web/*/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "http://web.archive.org/web/20190302123456/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org.evil.com/web/20190302123456/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://web.archive.org/web/20190302123456id/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    },
+    {
+      "snapshot": "https://example.com/web/20190302123456/https://example.com/post",
+      "dead": "https://example.com/post",
+      "expected": null
+    }
+  ]
+}

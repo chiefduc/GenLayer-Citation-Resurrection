@@ -1,0 +1,21 @@
+{
+  "name": "citation-resurrection-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend for the CitationResurrection GenLayer Intelligent Contract",
+  "scripts": {
+    "dev": "vite",
+    "dev:demo": "vite --mode demo",
+    "build": "vite build",
+    "build:demo": "vite build --mode demo",
+    "preview": "vite preview",
+    "test": "node --test test/urls.test.mjs test/chain.test.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "^1.1.8"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
